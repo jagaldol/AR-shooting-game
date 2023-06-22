@@ -8,6 +8,7 @@ Smartphone based AR with Lightship ARDK(Augmented Reality Developer Kit).
 ## Installation
 
 * you should create `Assets/Resources/ARDK/ArdkAuthConfig.asset`.
+    * Project -> `Assets/Resources/ARDK` -> right click -> Create-ARDK-ArdkAuthConfig
 * and input your api key(Lightship ARDK api key).
     * https://lightship.dev/products/ardk
 
