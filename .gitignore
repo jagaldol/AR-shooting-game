@@ -104,3 +104,6 @@ $RECYCLE.BIN/
 
 *.unitypackage.meta
 *.unitypackage
+
+
+Assets/Resources/ARDK/ArdkAuthConfig.asset
