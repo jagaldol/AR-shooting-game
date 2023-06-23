@@ -1,6 +1,6 @@
-# Smartphone based AR Development
+# Smartphone based AR shooting game
 
-Smartphone based AR with Lightship ARDK(Augmented Reality Developer Kit).
+Shooting game; Smartphone based AR with Lightship ARDK(Augmented Reality Developer Kit).
 
 > This is a part of the lab work of Pusan Nat`l Univ.'s Engineering Research Practice(I).  
 > If you want to check out other processes, please visit [this repo](https://github.com/jagaldol/lab-internship).
