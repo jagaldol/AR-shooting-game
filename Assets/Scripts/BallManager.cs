@@ -19,28 +19,29 @@ public class BallManager : MonoBehaviour
     {
         createEnemy();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1f));
-            TouchBegan(pos);
-        }
-
-        //if (Input.touchCount > 0)
+        //if (Input.GetMouseButtonDown(0))
         //{
-        //    Touch touch = Input.GetTouch(0);
-
-        //    if (touch.phase == TouchPhase.Began)
-        //    {
-        //        TouchBegan(touch);
-        //    }
+        //    Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1f));
+        //    TouchBegan(pos);
         //}
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                TouchBegan(touch);
+            }
+        }
     }
 
-    private void TouchBegan(Vector3 pos)
+
+    private void TouchBegan(Touch touch)
     {
-        GameObject newBall = Instantiate(ballPrefab, pos, Quaternion.identity);
+        GameObject newBall = Instantiate(ballPrefab);
         newBall.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 0.0f));
-        newBall.transform.position = pos;
+        newBall.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
 
         Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
         rigidbody.velocity = new Vector3(0f, 0f, 0f);
