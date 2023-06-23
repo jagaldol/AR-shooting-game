@@ -21,15 +21,26 @@ public class BallManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            TouchBegan();
+            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1f));
+            TouchBegan(pos);
         }
+
+        //if (Input.touchCount > 0)
+        //{
+        //    Touch touch = Input.GetTouch(0);
+
+        //    if (touch.phase == TouchPhase.Began)
+        //    {
+        //        TouchBegan(touch);
+        //    }
+        //}
     }
 
-    private void TouchBegan()
+    private void TouchBegan(Vector3 pos)
     {
-        GameObject newBall = Instantiate(ballPrefab);
+        GameObject newBall = Instantiate(ballPrefab, pos, Quaternion.identity);
         newBall.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 0.0f));
-        newBall.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
+        newBall.transform.position = pos;
 
         Rigidbody rigidbody = newBall.GetComponent<Rigidbody>();
         rigidbody.velocity = new Vector3(0f, 0f, 0f);
