@@ -8,7 +8,7 @@ Shooting game; Smartphone based AR with Lightship ARDK(Augmented Reality Develop
 ## Demo
 
 <p align="center">
-    <img src="./docs/demo.gif" width=300px>
+    <img src="https://github.com/jagaldol/AR-shooting-game/assets/84557643/537508c7-88d3-4800-a3ea-0a34d8f70dc3" width=300px>
 </p>
 
 ## Installation
